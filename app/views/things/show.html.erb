@@ -8,3 +8,15 @@
 </ul>
 
 <%= link_to 'Edit', edit_thing_path(@thing) %>
+
+<hr/>
+
+<h2>This is how it's done:</h2>
+<pre class="ruby">
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Name:&lt;/b&gt; &lt;%= @thing.title %&gt;&lt;/li&gt;
+    &lt;% @thing.properties.each do |prop| %&gt;
+      &lt;li&gt;&lt;b&gt;&lt;%= prop.label %&gt;:&lt;/b&gt; &lt;%= prop.value %&gt;
+    &lt;% end %&gt;
+  &lt;/ul&gt;
+</pre>

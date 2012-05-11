@@ -7,8 +7,43 @@
 
 <p>This is really just a very minimalistic demo app.</p>
 
-<ul>
-  <li><%= link_to "Meta Types", meta_types_path() %></li>
-  <li><%= link_to "Meta Type Properties", meta_type_properties_path() %></li>
-  <li><%= link_to "Things", things_path() %></li>
-</ul>
+<div class="row">
+  <div class="span4">
+    <h2><tt><%= link_to "MetaTypes", meta_types_path() %></tt></h2>
+    <p>
+      <tt>MetaTypes</tt> are model-descriptions. They consist of a name and a
+      collection of <tt>MetaTypeProperties</tt>.
+    </p>
+    <p>
+      Once defined, you can use them as a typed key-value store on other models,
+      in this example, the <tt>Thing</tt> model is used for that.
+    </p>
+  </div>
+  <div class="span4">
+    <h2><tt><%= link_to "MetaTypeProperties", meta_type_properties_path() %></tt></h2>
+    <p>
+      <tt>MetaTypeProperties</tt> are descriptions of an individual attribute inside a
+      <tt>MetaType</tt>. Create them and add them to <tt>MetaTypes</tt>.
+    </p>
+  </div>
+  <div class="span4">
+    <h2><tt><%= link_to "Things", things_path() %></tt></h2>
+    <p>
+      A <tt>Thing</tt> is a normal <tt>ActiveRecord</tt> model that uses a <tt>meta_typed</tt>
+      declaration to <i>mount</i> the <tt>MetaType</tt>. In this example, it has only a
+      <tt>title</tt> attribute.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <p><%= link_to "Meta Types »", meta_types_path(), class: 'btn' %></p>
+  </div>
+  <div class="span4">
+    <p><%= link_to "Meta Type Properties »", meta_type_properties_path(), class: 'btn' %></p>
+  </div>
+  <div class="span4">
+    <p><%= link_to "Things »", things_path(), class: 'btn' %></p>
+  </div>
+</div>

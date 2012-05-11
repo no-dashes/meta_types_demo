@@ -7,3 +7,18 @@
 </ul>
 
 <%= link_to "New Thing", new_thing_path() %>
+
+<hr/>
+
+<h2>This is how it's done:</h2>
+
+<pre>
+  class Thing &lt; ActiveRecord::Base
+    attr_accessible :title, :meta_type, :meta_type_id
+
+    validates_presence_of :title
+
+    meta_typed :properties
+
+  end
+</pre>
