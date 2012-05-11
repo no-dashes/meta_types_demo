@@ -1,0 +1,12 @@
+<%= simple_form_for @thing, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= f.input :meta_type_id, as: :hidden %>
+  <%= f.input :title %>
+  <%= field_set_tag "Here come the properties of the MetaType '#{@thing.meta_type.title}'" do %>
+    <%= f.fields_for :properties do |ff| %>
+      <% @thing.properties.each do |prop| %>
+        <%= ff.input prop.sid, collection: prop.choices, label: prop.label %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
