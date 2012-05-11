@@ -1,4 +1,6 @@
 class MetaTypePropertiesController < ApplicationController
+  # cruddler just adds the ordinary CRUD methods. Nothing fancy there.
+  # see https://github.com/provideal/cruddler
   cruddler :all
 
   def index
