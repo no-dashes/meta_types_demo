@@ -59,3 +59,26 @@ typ2.meta_type_properties = [
   )
 ]
 typ2.save!
+
+Thing.create!(
+  title: 'Address Example',
+  meta_type: typ1,
+  properties_attributes: {
+    firstname: 'Santa',
+    lastname:  'Clause',
+    gender:    'unspecified',
+    birthday:  Date.today-1.year,
+    mood:      'rednosed'
+})
+
+Thing.create!(
+  title: "Kitchen Sink Example",
+  meta_type: typ2,
+  properties_attributes: {
+    firstname: 'Kitchysinky',
+    descr:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    active:    true,
+    somedate:  Date.today - 1.year - 1.month - 1.day,
+    choice:    'dunno'
+  }
+)
