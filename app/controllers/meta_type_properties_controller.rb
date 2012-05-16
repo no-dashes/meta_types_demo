@@ -4,6 +4,6 @@ class MetaTypePropertiesController < ApplicationController
   cruddler :all
 
   def index
-    @meta_type_properties = MetaTypeProperty.all
+    @meta_type_properties = MetaTypeProperty.editable
   end
 end

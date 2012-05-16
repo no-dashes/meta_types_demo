@@ -3,7 +3,7 @@
 <ul>
   <li><b>Name:</b> <%= @thing.title %></li>
   <% @thing.properties.each do |prop| %>
-    <li><b><%= prop.label %>:</b> <%= prop.value %>
+    <li><b><%= prop.label %>:</b> <%= prop.value %> <%= prop.dimension %>
   <% end %>
 </ul>
 
@@ -16,7 +16,7 @@
   &lt;ul&gt;
     &lt;li&gt;&lt;b&gt;Name:&lt;/b&gt; &lt;%= @thing.title %&gt;&lt;/li&gt;
     &lt;% @thing.properties.each do |prop| %&gt;
-      &lt;li&gt;&lt;b&gt;&lt;%= prop.label %&gt;:&lt;/b&gt; &lt;%= prop.value %&gt;
+      &lt;li&gt;&lt;b&gt;&lt;%= prop.label %&gt;:&lt;/b&gt; &lt;%= prop.value %&gt; &lt;%= prop.dimension %&gt;
     &lt;% end %&gt;
   &lt;/ul&gt;
 </pre>

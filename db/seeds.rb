@@ -1,11 +1,16 @@
+
+firstname = MetaTypeProperty.new(
+  sid:               'firstname',
+  label:             'First Name',
+  property_type_sid: 'string',
+  required:          true
+)
+firstname.system = true
+firstname.save!
+
 typ1 = MetaType.new(sid: 'address', title: 'Address')
 typ1.meta_type_properties = [
-  MetaTypeProperty.new(
-    sid:               'firstname',
-    label:             'First Name',
-    property_type_sid: 'string',
-    required:          true
-  ),
+  firstname,
   MetaTypeProperty.new(
     sid:               'lastname',
     label:             'Last Name',
@@ -79,6 +84,7 @@ Thing.create!(
     descr:     'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     active:    true,
     somedate:  Date.today - 1.year - 1.month - 1.day,
+
     choice:    'dunno'
   }
 )
